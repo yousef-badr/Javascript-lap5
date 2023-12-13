@@ -1,0 +1,8 @@
+Abstract Class : (using functions)
+ you can create an abstract class-like behavior using constructor functions and prototypes. 
+ You can define methods in the prototype that act as abstract methods, 
+ and then extend this "abstract class" to create concrete classes that implement those methods.
+Interfaces : (using object literals)
+JavaScript does not have a native concept of interfaces,
+but you can achieve similar functionality using object literals.
+You define an object with a set of methods that must be implemented by any object that wants to conform to the interface.

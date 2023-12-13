@@ -1,0 +1,24 @@
+// Inheritance in function constructor 
+function Car(name) {
+  this.name = name;
+}
+Car.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.name);
+};
+function Bmw(name, color) {
+  Car.call(this, name);
+  this.color = color;
+}
+Bmw.prototype = Object.create(Car.prototype);
+Bmw.prototype.constructor = Bmw;
+
+Bmw.prototype.stop = function() {
+  console.log("stop!");
+};
+
+var myCar = new Car("X5Vrs");
+var myBmw = new Bmw("x5", "red");
+
+myCar.sayHello(); // Outputs: Hello, I'm X5Vrs
+myBmw.sayHello();    // Outputs: Hello, I'm X5
+myBmw.stop();        // Outputs: stop!
